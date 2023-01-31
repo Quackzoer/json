@@ -6,13 +6,13 @@ import 'dart:developer' as dev;
 
 import 'package:json/employee_model.dart';
 
-class FileManger {
-  static FileManger? _instance;
+class FileManager {
+  static FileManager? _instance;
 
-  FileManger._internal() {
+  FileManager._internal() {
     _instance = this;
   }
-  factory FileManger() => _instance ?? FileManger._internal();
+  factory FileManager() => _instance ?? FileManager._internal();
   Future<String> get _dirPath async {
     Directory directory = await getApplicationDocumentsDirectory();
     return directory.path;

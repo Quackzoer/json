@@ -12,14 +12,14 @@ class FileController extends ChangeNotifier {
   List<dynamic>? get employee => _employees;
 
   readEmployees() async {
-    var response = await FileManger().readJsonFile();
+    var response = await FileManager().readJsonFile();
 
     dev.log(response.toString());
     _employees =
-        AllEmployees.fromJsonAll(await FileManger().readJsonFile()).all;
+        AllEmployees.fromJsonAll(await FileManager().readJsonFile()).all;
   }
 
   writeEmployees(List<Employee> list) async {
-    _employees = await FileManger().writeJsonFile(list);
+    _employees = await FileManager().writeJsonFile(list);
   }
 }
